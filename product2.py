@@ -10,8 +10,6 @@ poem_vender = []
 for i in range (len(poem_list)):
     poem_vender.append(poem_list[i] + " " + poem_author[i])
 
-uriage_path = "C:\\Users\\RyoyaMizukami\\Desktop\\Python\\enPiT2019\\vending_machine\\uriage.txt"
-
 def vending_machine():
     global vending_count
     global n
@@ -50,7 +48,7 @@ def oturi_maker():
 
 def admin_mode():
     global vending_count
-    with open(uriage_path) as f:
+    with open("uriage.txt") as f:
         uriage_data = int(f.readline())
     PASS = input("パスワードを入力してください。　")
     if PASS == "admin":
@@ -58,10 +56,10 @@ def admin_mode():
     else: print("パスワードが違います。やり直してください。")
 
 def uriage_keeper():
-    with open(uriage_path) as f:
+    with open("uriage.txt") as f:
         uriage_data = int(f.readline())
     global vending_count
-    with open(uriage_path, mode = "w", encoding="utf-8") as f:
+    with open("uriage.txt", mode = "w", encoding="utf-8") as f:
         f.write(str(uriage_data + 100))
 
 def hikizan():
